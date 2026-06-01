@@ -5,6 +5,11 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Comparing {
+    public static void printSongs(List<Song> songs) {
+        for (int i = 0; i < songs.size(); i++) System.out.printf("%d: %s\n", i, songs.get(i));
+        IO.println();
+    }
+
     public static void main(String[] args) {
         List<Song> playlist = new ArrayList<>(List.of(
                 new Song(
@@ -22,17 +27,16 @@ public class Comparing {
                         180
                 )
         ));
-
-        System.out.println(playlist);
+        printSongs(playlist);
 
         playlist.sort(Comparator.comparing(Song::getArtist));
-        System.out.println(playlist);
+        printSongs(playlist);
 
         playlist.sort(
                 Comparator.comparing(Song::getArtist)
                         .thenComparing(Song::getTitle)
         );
-        System.out.println(playlist);
+        printSongs(playlist);
 
         playlist.sort(
                 Comparator.comparing(Song::getArtist)
@@ -41,6 +45,6 @@ public class Comparing {
                                         .reversed()
                         )
         );
-        System.out.println(playlist);
+        printSongs(playlist);
     }
 }

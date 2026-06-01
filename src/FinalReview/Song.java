@@ -22,4 +22,8 @@ public class Song {
     public int getDuration() {
         return duration;
     }
+
+    public String toString() {
+        return String.format("%s by %s (%ds)", title, artist, duration);
+    }
 }
