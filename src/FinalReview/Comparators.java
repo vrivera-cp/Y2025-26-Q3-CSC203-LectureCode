@@ -23,11 +23,22 @@ public class Comparators {
             return 0;
         };
 
-        // comparator = (a, b) -> b - a; // Same effect, only for integers
-        // comparator = (a, b) -> a - b; // Descending, only for integers
+        // comparator = (a, b) -> a - b; // Same effect, only for integers
+        // comparator = (a, b) -> b - a; // Descending, only for integers
 
         numbers.sort(comparator);
 
         IO.println(numbers);
+
+        // Built-in Type typically have a natural sorting
+        List<String> words = new ArrayList<>(List.of(
+                "Mochi",
+                "Harvest",
+                "Pearl"
+        ));
+
+        words.sort(null); // Use natural sorting
+
+        IO.println(words);
     }
 }
